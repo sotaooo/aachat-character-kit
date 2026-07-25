@@ -33,6 +33,10 @@ The script writes the same filename under ignored
 `.work/transparent-candidates/`. It does not remove small disconnected
 components after segmentation.
 
+The default is the same BiRefNet general model used by the legacy production
+workflow. If another installed rembg model is more suitable, pass
+`--model <name>`; this is optional.
+
 ## Inspect at native resolution
 
 ```bash
@@ -43,7 +47,9 @@ python3 scripts/kit.py transparent-check \
 
 Inspect the 3072×1024 preview: RGB master, light checkerboard, then dark
 checkerboard. Compare at 100% zoom. For Level 5, verify smoke, particles, glow,
-thin lines, translucent pieces, and detached details.
+thin lines, translucent pieces, and detached details. Also check transparent
+holes and white edge fringe. Use judgment; no numeric score or report is
+required.
 
 If anything is missing, delete only the candidate:
 

@@ -58,6 +58,10 @@ For Level 5 evolution, also pass:
 --transformation "<at least three transformed axes>"
 ```
 
+The generated prompt is a starting point, not locked wording. When a stronger
+prompt or LCD correction is useful, optionally read
+`references/PROMPT_GUIDE.md` and adapt its examples to the human request.
+
 Generate one native 1024×1024 result at a time into `.work/candidates/`.
 Inspect the actual image after every attempt. Revise the brief or prompt to fix
 the observed failure; do not repair a wrong-sized result by resizing, padding,
@@ -65,7 +69,9 @@ format conversion, or relabeling.
 
 ## Gate and approve
 
-1. Inspect every visual item in the checklist in `references/SPEC.md`.
+1. Inspect the image against `references/SPEC.md`. Optionally use
+   `references/REVIEW_CHECKLIST.md` as a reminder; it requires no score or
+   written QA record.
 2. If any item fails, run `python3 scripts/kit.py reject <candidate>` or revise
    with a new attempt. The reject command only deletes files under `.work/`.
 3. If all visual items pass, run:

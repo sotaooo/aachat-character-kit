@@ -47,24 +47,14 @@ pad, convert, or remove the background to make a candidate pass.
   architecture, silhouette, material system, function, motion, environmental
   effect. Preserve at least two recognizable lineage anchors.
 
-## System visual QA
+## Visual review
 
-Reject if any answer is no:
+Before recording a system pass, inspect the actual image against the fixed
+identity, composition, and target Level above. `REVIEW_CHECKLIST.md` is an
+optional reminder. No score, schema, or written QA record is required.
 
-1. Exactly one original character?
-2. LCD count, shape, eyes, pupil size/direction, glow, integration, visibility,
-   and absence of other facial features all correct?
-3. Entire character and every prop safely inside frame?
-4. Background visually white and neutral; lighting bright and clean?
-5. No text, logo, watermark, scenery, or recognizable existing-IP/brand copy?
-6. Target Level grammar clearly present?
-7. Design coherent rather than a motif stuck onto a generic mascot?
-8. If reference mode, source design language recognizable without copying its
-   face, marks, or artifacts?
-9. If Level 5 evolution, three transformed axes and two lineage anchors visible?
-
-System QA means the file passes both this visual review and the mechanical
-checker. It does not mean a human approved it.
+System QA means the agent inspected the image against this specification and
+the file passed the mechanical checker. It does not mean a human approved it.
 
 ## Prompt contract
 
@@ -80,4 +70,3 @@ For concept mode, state that no character-specific source image is used. For
 reference mode, state that the supplied image controls design language while
 the fixed aachat LCD replaces the complete original face system. The level
 anchor controls rendering/construction only.
-

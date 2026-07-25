@@ -11,7 +11,7 @@ The legacy source repository was inspected read-only on 2026-07-25.
 | Master-spec diagram | Optional recovery reference for LCD/composition failures |
 | One Level 4 anchor | Minimum construction reference |
 | One Level 5 anchor | Minimum construction reference |
-| Prompt and QA guidance | Condensed into `SKILL.md`, `SPEC.md`, and two scripts |
+| Prompt and QA guidance | Condensed into the core Skill plus optional prompt and review references |
 
 The copied images match the selected source files byte-for-byte.
 

@@ -16,6 +16,9 @@ one specification, and one approval flow.
      --brief "A monsoon observatory carried as a living instrument"
    ```
 
+   Optional examples and LCD correction wording are in
+   [`references/PROMPT_GUIDE.md`](references/PROMPT_GUIDE.md).
+
 4. Generate into `.work/candidates/`, then inspect and iterate.
 5. Record a system pass only after mechanical and visual QA:
 

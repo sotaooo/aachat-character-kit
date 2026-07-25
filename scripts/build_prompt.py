@@ -16,10 +16,10 @@ def spec_for_level(level: str) -> str:
     text = SPEC.read_text(encoding="utf-8")
     level4 = text.index("## Level 4")
     level5 = text.index("## Level 5")
-    qa = text.index("## System visual QA")
+    review = text.index("## Visual review")
     common = text[:level4]
-    selected = text[level4:level5] if level == "4" else text[level5:qa]
-    return common + selected + text[qa:]
+    selected = text[level4:level5] if level == "4" else text[level5:review]
+    return common + selected + text[review:]
 
 
 def parse_args() -> argparse.Namespace:

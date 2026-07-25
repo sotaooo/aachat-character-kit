@@ -1,6 +1,6 @@
 # aachat Level 4/5 production specification
 
-This file is normative. A production master is a native **1024×1024 RGB PNG**
+This file is normative. A production master is a native **1254×1254 RGB PNG**
 on an opaque, seamless white background. Never resize, upscale, interpolate,
 pad, convert, or remove the background to make a candidate pass.
 

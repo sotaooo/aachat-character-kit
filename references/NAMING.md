@@ -75,8 +75,8 @@ filename.
 filename,relative_path,resolution,lineage
 ```
 
-The approval command adds the row. Do not edit a filename without updating its
-row.
+The approval command adds the row with resolution `1254x1254`. Do not edit a
+filename without updating its row.
 
 ## Derivatives
 

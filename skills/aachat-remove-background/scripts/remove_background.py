@@ -13,6 +13,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[3]
 PRODUCTION = ROOT / "production"
 OUTPUT = ROOT / ".work" / "transparent-candidates"
+MASTER_SIZE = 1254
+MASTER_DIMENSIONS = (MASTER_SIZE, MASTER_SIZE)
 
 
 def is_under(path: Path, parent: Path) -> bool:
@@ -36,9 +38,13 @@ def main() -> None:
     if not source_path.is_file() or not is_under(source_path, PRODUCTION):
         sys.exit("FAIL: input must be an approved file under production/")
     with Image.open(source_path) as opened:
-        if opened.format != "PNG" or opened.size != (1024, 1024) or opened.mode != "RGB":
+        if (
+            opened.format != "PNG"
+            or opened.size != MASTER_DIMENSIONS
+            or opened.mode != "RGB"
+        ):
             sys.exit(
-                "FAIL: input must be a native 1024x1024 RGB PNG production master"
+                "FAIL: input must be a native 1254x1254 RGB PNG production master"
             )
         source = opened.copy()
 
@@ -60,7 +66,7 @@ def main() -> None:
     result = remove(source, session=session)
     if not isinstance(result, Image.Image):
         sys.exit("FAIL: rembg did not return a Pillow image")
-    if result.size != (1024, 1024):
+    if result.size != MASTER_DIMENSIONS:
         sys.exit(f"FAIL: output size changed to {result.size}")
     result = result.convert("RGBA")
     if result.getchannel("A").getextrema() in ((255, 255), (0, 0)):

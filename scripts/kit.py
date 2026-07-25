@@ -38,6 +38,9 @@ MASTER_NAME = re.compile(
     r"([a-z]+(?:-[a-z]+)*)\.png"
 )
 MANIFEST_FIELDS = ("filename", "relative_path", "resolution", "lineage")
+MASTER_SIZE = 1254
+MASTER_DIMENSIONS = (MASTER_SIZE, MASTER_SIZE)
+RESOLUTION_LABEL = f"{MASTER_SIZE}x{MASTER_SIZE}"
 
 
 def resolved(path: Path) -> Path:
@@ -150,7 +153,7 @@ def record_manifest(relative: Path, lineage: str) -> None:
             {
                 "filename": relative.name,
                 "relative_path": relative.as_posix(),
-                "resolution": "1024x1024",
+                "resolution": RESOLUTION_LABEL,
                 "lineage": lineage,
             }
         )
@@ -167,16 +170,16 @@ def check_master(path: Path) -> None:
     with Image.open(path) as image:
         if image.format != "PNG":
             raise ValueError(f"encoded format is {image.format}, expected PNG")
-        if image.size != (1024, 1024):
-            raise ValueError(f"size is {image.size}, expected (1024, 1024)")
+        if image.size != MASTER_DIMENSIONS:
+            raise ValueError(f"size is {image.size}, expected {MASTER_DIMENSIONS}")
         if image.mode != "RGB":
             raise ValueError(f"mode is {image.mode}, expected RGB")
         pixels = image.load()
         border = []
-        for x in range(1024):
-            border.extend((pixels[x, 0], pixels[x, 1023]))
-        for y in range(1, 1023):
-            border.extend((pixels[0, y], pixels[1023, y]))
+        for x in range(MASTER_SIZE):
+            border.extend((pixels[x, 0], pixels[x, MASTER_SIZE - 1]))
+        for y in range(1, MASTER_SIZE - 1):
+            border.extend((pixels[0, y], pixels[MASTER_SIZE - 1, y]))
         tinted = sum(
             1
             for r, g, b in border
@@ -199,7 +202,10 @@ def move_unique(source: Path, destination: Path) -> None:
 
 def command_check(args: argparse.Namespace) -> None:
     check_master(args.image)
-    print("MECHANICAL PASS: native 1024x1024 RGB PNG; neutral near-white border.")
+    print(
+        f"MECHANICAL PASS: native {RESOLUTION_LABEL} RGB PNG; "
+        "neutral near-white border."
+    )
     print("Visual QA is still required. Read references/SPEC.md.")
 
 
@@ -265,7 +271,7 @@ def command_family_check(args: argparse.Namespace) -> None:
     expected_parent_path = parent.relative_to(PRODUCTION.resolve()).as_posix()
     if (
         parent_row["relative_path"] != expected_parent_path
-        or parent_row["resolution"] != "1024x1024"
+        or parent_row["resolution"] != RESOLUTION_LABEL
         or parent_row["lineage"] != f"aachat-origin-{group}.png"
     ):
         raise ValueError("Level 4 manifest row is inconsistent")
@@ -285,7 +291,7 @@ def command_family_check(args: argparse.Namespace) -> None:
             or child_name != name
             or not evolution
             or row["filename"] != child.name
-            or row["resolution"] != "1024x1024"
+            or row["resolution"] != RESOLUTION_LABEL
         ):
             raise ValueError(f"invalid family member: {row['filename']}")
         evolutions.add(evolution)
@@ -319,15 +325,15 @@ def checkerboard(size: tuple[int, int], dark: bool = False) -> Image.Image:
 
 
 def make_preview(master: Image.Image, derivative: Image.Image, output: Path) -> None:
-    panel_size = (1024, 1024)
+    panel_size = MASTER_DIMENSIONS
     panels = [master.copy()]
     for dark in (False, True):
         panel = checkerboard(panel_size, dark=dark)
         panel.paste(derivative, (0, 0), derivative)
         panels.append(panel)
-    canvas = Image.new("RGB", (3072, 1024), "white")
+    canvas = Image.new("RGB", (MASTER_SIZE * 3, MASTER_SIZE), "white")
     for index, panel in enumerate(panels):
-        canvas.paste(panel, (index * 1024, 0))
+        canvas.paste(panel, (index * MASTER_SIZE, 0))
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(output, "PNG")
 
@@ -344,9 +350,13 @@ def check_derivative(master_path: Path, derivative_path: Path) -> tuple[Image.Im
     with Image.open(master_path) as opened:
         master = opened.convert("RGB")
     with Image.open(derivative_path) as opened:
-        if opened.format != "PNG" or opened.size != (1024, 1024) or opened.mode != "RGBA":
+        if (
+            opened.format != "PNG"
+            or opened.size != MASTER_DIMENSIONS
+            or opened.mode != "RGBA"
+        ):
             raise ValueError(
-                f"derivative must be 1024x1024 RGBA PNG; got "
+                f"derivative must be {RESOLUTION_LABEL} RGBA PNG; got "
                 f"{opened.format} {opened.size} {opened.mode}"
             )
         derivative = opened.copy()

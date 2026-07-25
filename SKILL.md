@@ -78,7 +78,7 @@ prompt or LCD correction is useful, optionally read
 
 Choose the group, Level 4 name, and three evolution words using
 `references/NAMING.md`. If needed, create the two ignored stage/group folders.
-Generate each native 1024×1024 result directly at its regulated candidate path.
+Generate each native 1254×1254 result directly at its regulated candidate path.
 Inspect the actual image after every attempt. Revise the brief or prompt to fix
 the observed failure; do not repair a wrong-sized result by resizing, padding,
 format conversion, or relabeling.

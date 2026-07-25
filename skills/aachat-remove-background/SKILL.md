@@ -1,6 +1,6 @@
 ---
 name: aachat-remove-background
-description: Create, inspect, accept, or reject a transparent 1024×1024 RGBA derivative from a human-approved aachat RGB production master. Use only when a human requests background removal, transparency, a cutout, or a transparent PNG; do not use during master generation or before human approval.
+description: Create, inspect, accept, or reject a transparent 1254×1254 RGBA derivative from a human-approved aachat RGB production master. Use only when a human requests background removal, transparency, a cutout, or a transparent PNG; do not use during master generation or before human approval.
 ---
 
 # Remove an aachat background
@@ -49,7 +49,7 @@ workflow. If another installed rembg model is more suitable, pass
   --preview .work/transparent-preview.png
 ```
 
-Inspect the 3072×1024 preview: RGB master, light checkerboard, then dark
+Inspect the 3762×1254 preview: RGB master, light checkerboard, then dark
 checkerboard. Compare at 100% zoom. For Level 5, verify smoke, particles, glow,
 thin lines, translucent pieces, and detached details. Also check transparent
 holes and white edge fringe. Use judgment; no numeric score or report is

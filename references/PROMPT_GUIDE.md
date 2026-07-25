@@ -68,7 +68,7 @@ pupil with the same slight RIGHT offset; never center or mirror the pupils.
 Keep the screen frontal, aligned, unobstructed, and free of every other facial
 feature.
 
-Native 1024×1024 RGB PNG. Exactly one character. Show the complete body, hands,
+Native 1254×1254 RGB PNG. Exactly one character. Show the complete body, hands,
 feet, both soles, vane, and every extension inside frame. Opaque seamless white
 background, maximum-bright high-key studio lighting, no scenery, text, logo,
 watermark, floor line, gradient, or extra character.

@@ -44,8 +44,8 @@ one specification, and one approval flow.
    Approve Level 4 first, then its three Level 5 children. Run `family-check`
    on the production Level 4 to confirm the 1+3 set.
 
-`production/` contains human-approved opaque RGB masters and their minimal
-lineage manifest. `derivatives/transparent/` contains optional RGBA
+`production/` contains human-approved native 1254×1254 RGB masters and their
+minimal lineage manifest. `derivatives/transparent/` contains optional RGBA
 derivatives. Unreviewed and rejected images are never committed.
 
 For a transparent derivative, read

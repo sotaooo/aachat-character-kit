@@ -40,7 +40,7 @@ required report. Inspect the actual image and use judgment.
 
 ## File and approval
 
-- Mechanical checker confirms native 1024×1024 RGB PNG.
+- Mechanical checker confirms native 1254×1254 RGB PNG.
 - A system QA pass is not human approval.
 - The image remains outside `production/` until a human explicitly approves
   that exact candidate.

@@ -7,7 +7,8 @@ one specification, and one approval flow.
 ## Start
 
 1. Read [`SKILL.md`](SKILL.md).
-2. Install the only tool dependency: `python3 -m pip install -r requirements.txt`.
+2. To use the helper scripts, use Python 3 and install their small dependency:
+   `python3 -m pip install -r requirements.txt`.
 3. Build a prompt:
 
    ```bash
@@ -19,7 +20,8 @@ one specification, and one approval flow.
    Optional examples and LCD correction wording are in
    [`references/PROMPT_GUIDE.md`](references/PROMPT_GUIDE.md).
 
-4. Generate into `.work/candidates/`, then inspect and iterate.
+4. Generate into `.work/candidates/`, then inspect and iterate. If the working
+   folder does not exist, create it with `mkdir -p .work/candidates`.
 5. Record a system pass only after mechanical and visual QA:
 
    ```bash

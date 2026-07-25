@@ -10,7 +10,11 @@ the canvas, and never resize, crop, recenter, or delete detached details.
 
 ## Set up once
 
-rembg currently requires Python 3.11–3.13. From the repository root:
+This optional derivative workflow uses Python 3.11–3.13. If no supported
+Python is installed, install Python 3 normally for the operating system; RGB
+master generation does not require this setup. From the repository root, use
+the supported interpreter available on the machine (`python3`, `python3.12`,
+and so on):
 
 ```bash
 python3 -m venv .venv-transparency
@@ -40,7 +44,7 @@ workflow. If another installed rembg model is more suitable, pass
 ## Inspect at native resolution
 
 ```bash
-python3 scripts/kit.py transparent-check \
+.venv-transparency/bin/python scripts/kit.py transparent-check \
   production/<master.png> .work/transparent-candidates/<master.png> \
   --preview .work/transparent-preview.png
 ```
@@ -54,13 +58,14 @@ required.
 If anything is missing, delete only the candidate:
 
 ```bash
-python3 scripts/kit.py reject .work/transparent-candidates/<master.png>
+.venv-transparency/bin/python scripts/kit.py reject \
+  .work/transparent-candidates/<master.png>
 ```
 
 If it passes:
 
 ```bash
-python3 scripts/kit.py transparent-pass \
+.venv-transparency/bin/python scripts/kit.py transparent-pass \
   production/<master.png> .work/transparent-candidates/<master.png> \
   --visual-pass
 ```

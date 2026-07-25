@@ -9,17 +9,35 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = ROOT / "references" / "SPEC.md"
+LEVEL_MARKERS = {
+    "4": ("<!-- AACHAT_LEVEL_4_START -->", "<!-- AACHAT_LEVEL_4_END -->"),
+    "5": ("<!-- AACHAT_LEVEL_5_START -->", "<!-- AACHAT_LEVEL_5_END -->"),
+}
+SHARED_AFTER_LEVELS = "<!-- AACHAT_SHARED_AFTER_LEVELS -->"
 
 
 def spec_for_level(level: str) -> str:
     """Keep one source file while omitting the other Level from the prompt."""
     text = SPEC.read_text(encoding="utf-8")
-    level4 = text.index("## Level 4")
-    level5 = text.index("## Level 5")
-    review = text.index("## Visual review")
-    common = text[:level4]
-    selected = text[level4:level5] if level == "4" else text[level5:review]
-    return common + selected + text[review:]
+    try:
+        level4_start = text.index(LEVEL_MARKERS["4"][0])
+        level4_end = text.index(LEVEL_MARKERS["4"][1], level4_start)
+        level5_start = text.index(LEVEL_MARKERS["5"][0], level4_end)
+        level5_end = text.index(LEVEL_MARKERS["5"][1], level5_start)
+        shared_start = text.index(SHARED_AFTER_LEVELS, level5_end)
+        if not level4_start < level4_end < level5_start < level5_end < shared_start:
+            raise ValueError
+        start_marker, end_marker = LEVEL_MARKERS[level]
+        selected_start = text.index(start_marker) + len(start_marker)
+        selected_end = text.index(end_marker, selected_start)
+    except (KeyError, ValueError) as error:
+        raise RuntimeError(
+            "references/SPEC.md section markers are missing or out of order"
+        ) from error
+    common = text[:level4_start].rstrip()
+    selected = text[selected_start:selected_end].strip()
+    shared = text[shared_start + len(SHARED_AFTER_LEVELS) :].lstrip()
+    return f"{common}\n\n{selected}\n\n{shared}"
 
 
 def parse_args() -> argparse.Namespace:

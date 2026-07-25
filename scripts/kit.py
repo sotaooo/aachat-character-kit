@@ -56,12 +56,13 @@ def check_master(path: Path) -> None:
         tinted = sum(
             1
             for r, g, b in border
-            if min(r, g, b) < 245 or max(r, g, b) - min(r, g, b) > 5
+            if min(r, g, b) < 250 or max(r, g, b) - min(r, g, b) > 3
         )
-        if tinted / len(border) > 0.01:
+        if tinted / len(border) >= 0.01:
             raise ValueError(
-                f"outer border is not neutral near-white "
-                f"({tinted}/{len(border)} suspect pixels)"
+                f"outer border is not neutral near-white (requires RGB >= 250 "
+                f"with channel spread <= 3; fewer than 1% exceptions allowed; "
+                f"{tinted}/{len(border)} suspect pixels)"
             )
 
 

@@ -26,6 +26,7 @@ pad, convert, or remove the background to make a candidate pass.
   line, reflection, scenery, vignette, muddy shadow, text, logo, label,
   watermark, grid, or extra character.
 
+<!-- AACHAT_LEVEL_4_START -->
 ## Level 4 — Module Form
 
 - Build the actual character from large, coarse square 3D modules; never apply
@@ -35,7 +36,9 @@ pad, convert, or remove the background to make a candidate pass.
 - Use stepped contours, broad block faces, hard facets, and crisp rendering.
 - Prefer at most three material systems, one dominant motif, at most two
   supporting ideas, and low-to-medium decoration density.
+<!-- AACHAT_LEVEL_4_END -->
 
+<!-- AACHAT_LEVEL_5_START -->
 ## Level 5 — Ascended Form
 
 - Use premium high-resolution stylized 3D, a strong large silhouette, precise
@@ -46,7 +49,9 @@ pad, convert, or remove the background to make a candidate pass.
 - When evolving Level 4, substantially transform at least three of: body
   architecture, silhouette, material system, function, motion, environmental
   effect. Preserve at least two recognizable lineage anchors.
+<!-- AACHAT_LEVEL_5_END -->
 
+<!-- AACHAT_SHARED_AFTER_LEVELS -->
 ## Visual review
 
 Before recording a system pass, inspect the actual image against the fixed

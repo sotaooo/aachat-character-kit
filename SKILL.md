@@ -46,10 +46,12 @@ Create the complete prompt from the single specification:
 
 ```bash
 python3 scripts/build_prompt.py \
-  --mode concept|reference \
-  --level 4|5 \
-  --brief "<one concrete visual direction>"
+  --mode concept \
+  --level 4 \
+  --brief "A monsoon observatory carried as a living instrument"
 ```
+
+Replace the mode, level, and brief to match the human request.
 
 For Level 5 evolution, also pass:
 
@@ -62,7 +64,9 @@ The generated prompt is a starting point, not locked wording. When a stronger
 prompt or LCD correction is useful, optionally read
 `references/PROMPT_GUIDE.md` and adapt its examples to the human request.
 
-Generate one native 1024×1024 result at a time into `.work/candidates/`.
+If needed, create the ignored working folder with
+`mkdir -p .work/candidates`. Generate one native 1024×1024 result at a time
+into `.work/candidates/`.
 Inspect the actual image after every attempt. Revise the brief or prompt to fix
 the observed failure; do not repair a wrong-sized result by resizing, padding,
 format conversion, or relabeling.

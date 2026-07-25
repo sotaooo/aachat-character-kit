@@ -1,0 +1,17 @@
+{
+  "total": 1973,
+  "uniqueNounIds": 1973,
+  "reviewedHeadTypes": 258,
+  "categories": {
+    "B01-HUM": 41,
+    "B02-FAU": 429,
+    "B03-FLO": 79,
+    "B04-CUL": 317,
+    "B05-MEC": 247,
+    "B06-OBJ": 566,
+    "B07-MAT": 46,
+    "B08-NAT": 133,
+    "B09-ECH": 78,
+    "B10-ANO": 37
+  }
+}

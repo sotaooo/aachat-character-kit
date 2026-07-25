@@ -12,13 +12,14 @@ The legacy source repository was inspected read-only on 2026-07-25.
 | One Level 4 anchor | Minimum construction reference |
 | One Level 5 anchor | Minimum construction reference |
 | Prompt and QA guidance | Condensed into the core Skill plus optional prompt and review references |
+| `nouns_classified_1973/` | Added unchanged on request as the classified noun image library; `.DS_Store` omitted |
 
 The copied images match the selected source files byte-for-byte.
 
 ## Not moved
 
-454-item inputs/outputs, noun datasets and zip files, 256px libraries,
-calibration evidence, SQLite state, shards, queues, manifests, fixed profiles,
+454-item inputs/outputs, noun ZIP files, other 256px libraries, calibration
+evidence, SQLite state, shards, queues, batch manifests, fixed profiles,
 session/worker orchestration, checksums, schemas, registries, virtual
 environments, caches, historical 2048 canvases, and reclassification tools.
-They are batch-specific or duplicate the four selected references.
+They are batch-specific or duplicate the selected assets.

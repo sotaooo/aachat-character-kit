@@ -1,6 +1,6 @@
 # Source asset audit
 
-Source inspected read-only: `/Users/so/aachat_charactor` on 2026-07-25.
+The legacy source repository was inspected read-only on 2026-07-25.
 
 ## Moved
 
@@ -22,4 +22,3 @@ calibration evidence, SQLite state, shards, queues, manifests, fixed profiles,
 session/worker orchestration, checksums, schemas, registries, virtual
 environments, caches, historical 2048 canvases, and reclassification tools.
 They are batch-specific or duplicate the four selected references.
-

@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-transparency/
 .work/*
 !.work/.gitkeep
 outputs/
@@ -9,4 +10,3 @@ work/
 
 # Rejects and unreviewed images must never be committed.
 **/rejects/
-

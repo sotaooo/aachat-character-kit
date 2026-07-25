@@ -16,6 +16,8 @@ WORK = ROOT / ".work"
 CANDIDATES = WORK / "candidates"
 SYSTEM_APPROVED = WORK / "system-approved"
 PRODUCTION = ROOT / "production"
+TRANSPARENT_CANDIDATES = WORK / "transparent-candidates"
+TRANSPARENT_DERIVATIVES = ROOT / "derivatives" / "transparent"
 
 
 def resolved(path: Path) -> Path:
@@ -128,31 +130,27 @@ def checkerboard(size: tuple[int, int], dark: bool = False) -> Image.Image:
 
 
 def make_preview(master: Image.Image, derivative: Image.Image, output: Path) -> None:
-    thumb_size = (512, 512)
-    source = master.copy()
-    source.thumbnail(thumb_size)
-    rgba = derivative.copy()
-    rgba.thumbnail(thumb_size)
-    panels = [source]
+    panel_size = (1024, 1024)
+    panels = [master.copy()]
     for dark in (False, True):
-        panel = checkerboard(thumb_size, dark=dark)
-        panel.paste(rgba, (0, 0), rgba)
+        panel = checkerboard(panel_size, dark=dark)
+        panel.paste(derivative, (0, 0), derivative)
         panels.append(panel)
-    canvas = Image.new("RGB", (1536, 512), "white")
+    canvas = Image.new("RGB", (3072, 1024), "white")
     for index, panel in enumerate(panels):
-        canvas.paste(panel, (index * 512, 0))
+        canvas.paste(panel, (index * 1024, 0))
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(output, "PNG")
 
 
-def command_transparent_check(args: argparse.Namespace) -> None:
-    master_path = resolved(args.master)
-    derivative_path = resolved(args.derivative)
+def check_derivative(master_path: Path, derivative_path: Path) -> tuple[Image.Image, Image.Image]:
     check_master(master_path)
     if not is_under(master_path, PRODUCTION):
         raise ValueError("master must be under production/")
-    if not is_under(derivative_path, ROOT / "derivatives" / "transparent"):
-        raise ValueError("derivative must be under derivatives/transparent/")
+    if not is_under(derivative_path, TRANSPARENT_CANDIDATES):
+        raise ValueError("derivative candidate must be under .work/transparent-candidates/")
+    if master_path.name != derivative_path.name:
+        raise ValueError("master and derivative candidate filenames must match")
     with Image.open(master_path) as opened:
         master = opened.convert("RGB")
     with Image.open(derivative_path) as opened:
@@ -168,6 +166,13 @@ def command_transparent_check(args: argparse.Namespace) -> None:
         raise ValueError("derivative has no transparent pixels")
     if extrema == (0, 0):
         raise ValueError("derivative is fully transparent")
+    return master, derivative
+
+
+def command_transparent_check(args: argparse.Namespace) -> None:
+    master_path = resolved(args.master)
+    derivative_path = resolved(args.derivative)
+    master, derivative = check_derivative(master_path, derivative_path)
     if args.preview:
         make_preview(master, derivative, resolved(args.preview))
         print(f"PREVIEW: {resolved(args.preview)}")
@@ -176,6 +181,17 @@ def command_transparent_check(args: argparse.Namespace) -> None:
         "VISUAL CHECK REQUIRED: compare smoke, particles, glow, thin lines, "
         "translucent pieces, and detached details. Reject the derivative if lost."
     )
+
+
+def command_transparent_pass(args: argparse.Namespace) -> None:
+    master_path = resolved(args.master)
+    derivative_path = resolved(args.derivative)
+    if not args.visual_pass:
+        raise ValueError("inspect the native-resolution preview, then provide --visual-pass")
+    check_derivative(master_path, derivative_path)
+    target = TRANSPARENT_DERIVATIVES / derivative_path.name
+    move_unique(derivative_path, target)
+    print(f"TRANSPARENT DERIVATIVE PASS: {target}")
 
 
 def parser() -> argparse.ArgumentParser:
@@ -206,6 +222,12 @@ def parser() -> argparse.ArgumentParser:
     transparent.add_argument("derivative", type=Path)
     transparent.add_argument("--preview", type=Path)
     transparent.set_defaults(run=command_transparent_check)
+
+    transparent_pass = commands.add_parser("transparent-pass")
+    transparent_pass.add_argument("master", type=Path)
+    transparent_pass.add_argument("derivative", type=Path)
+    transparent_pass.add_argument("--visual-pass", action="store_true")
+    transparent_pass.set_defaults(run=command_transparent_pass)
     return root
 
 
@@ -219,4 +241,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

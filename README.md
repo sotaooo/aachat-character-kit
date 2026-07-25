@@ -34,6 +34,8 @@ one specification, and one approval flow.
 contains optional RGBA derivatives. Rejected images are deleted from ignored
 working directories and never committed.
 
+For a transparent derivative, read
+`skills/aachat-remove-background/SKILL.md` after the RGB master is approved.
+
 The source-asset decision is recorded in
 [`docs/asset-audit.md`](docs/asset-audit.md).
-

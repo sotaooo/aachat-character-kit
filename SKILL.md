@@ -89,17 +89,7 @@ format conversion, or relabeling.
 
 ## Transparent derivatives
 
-Create an RGBA copy only from an approved RGB master, using an available
-background-removal tool. Preserve the 1024×1024 canvas; do not crop, recenter,
-or overwrite the master. Save it under `derivatives/transparent/`, then run:
-
-```bash
-python3 scripts/kit.py transparent-check \
-  production/<master.png> derivatives/transparent/<copy.png> \
-  --preview .work/transparent-preview.png
-```
-
-Inspect the preview on checkerboard and dark backgrounds. For Level 5, compare
-smoke, particles, glow, thin lines, translucent pieces, and detached details
-against the RGB master. Reject only the derivative if anything is missing.
-
+When a transparent copy is requested, read and follow
+`skills/aachat-remove-background/SKILL.md`. It creates an ignored candidate,
+checks it at native resolution, and moves only a visually accepted derivative
+into `derivatives/transparent/`. Never replace the RGB master.

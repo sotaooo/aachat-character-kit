@@ -1,0 +1,4 @@
+interface:
+  display_name: "aachat Background Removal"
+  short_description: "Create and verify transparent aachat derivatives"
+  default_prompt: "Use $aachat-remove-background to create a transparent RGBA derivative from an approved aachat RGB master."

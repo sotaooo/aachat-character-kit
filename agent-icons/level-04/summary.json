@@ -1,0 +1,16 @@
+{
+  "level": "04",
+  "total": 149,
+  "categories": {
+    "B01-HUM": 18,
+    "B02-FAU": 25,
+    "B03-FLO": 8,
+    "B04-CUL": 10,
+    "B05-MEC": 22,
+    "B06-OBJ": 34,
+    "B07-MAT": 13,
+    "B08-NAT": 10,
+    "B09-ECH": 4,
+    "B10-ANO": 5
+  }
+}

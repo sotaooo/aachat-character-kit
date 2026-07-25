@@ -10,14 +10,13 @@ the canvas, and never resize, crop, recenter, or delete detached details.
 
 ## Set up once
 
-This optional derivative workflow uses Python 3.11–3.13. If no supported
-Python is installed, install Python 3 normally for the operating system; RGB
-master generation does not require this setup. From the repository root, use
-the supported interpreter available on the machine (`python3`, `python3.12`,
-and so on):
+This optional derivative workflow supports Python 3.11–3.13. For a new setup,
+install Python 3.13; an existing 3.11 or 3.12 also works. Python 3.14 is not
+currently supported by `rembg`. RGB master generation does not require this
+setup. From the repository root:
 
 ```bash
-python3 -m venv .venv-transparency
+python3.13 -m venv .venv-transparency
 .venv-transparency/bin/python -m pip install \
   -r skills/aachat-remove-background/requirements.txt
 ```
@@ -30,12 +29,12 @@ not affect RGB master generation.
 ```bash
 .venv-transparency/bin/python \
   skills/aachat-remove-background/scripts/remove_background.py \
-  production/<master.png>
+  production/<stage>/<group-folder>/<master.png>
 ```
 
-The script writes the same filename under ignored
-`.work/transparent-candidates/`. It does not remove small disconnected
-components after segmentation.
+The script preserves the master's stage/group path under ignored
+`.work/transparent-candidates/` and adds `-alpha` to the filename. It does not
+remove small disconnected components after segmentation.
 
 The default is the same BiRefNet general model used by the legacy production
 workflow. If another installed rembg model is more suitable, pass
@@ -45,7 +44,8 @@ workflow. If another installed rembg model is more suitable, pass
 
 ```bash
 .venv-transparency/bin/python scripts/kit.py transparent-check \
-  production/<master.png> .work/transparent-candidates/<master.png> \
+  production/<stage>/<group-folder>/<master.png> \
+  .work/transparent-candidates/<stage>/<group-folder>/<master-alpha.png> \
   --preview .work/transparent-preview.png
 ```
 
@@ -59,14 +59,15 @@ If anything is missing, delete only the candidate:
 
 ```bash
 .venv-transparency/bin/python scripts/kit.py reject \
-  .work/transparent-candidates/<master.png>
+  .work/transparent-candidates/<stage>/<group-folder>/<master-alpha.png>
 ```
 
 If it passes:
 
 ```bash
 .venv-transparency/bin/python scripts/kit.py transparent-pass \
-  production/<master.png> .work/transparent-candidates/<master.png> \
+  production/<stage>/<group-folder>/<master.png> \
+  .work/transparent-candidates/<stage>/<group-folder>/<master-alpha.png> \
   --visual-pass
 ```
 

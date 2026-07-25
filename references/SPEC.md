@@ -49,6 +49,7 @@ pad, convert, or remove the background to make a candidate pass.
 - When evolving Level 4, substantially transform at least three of: body
   architecture, silhouette, material system, function, motion, environmental
   effect. Preserve at least two recognizable lineage anchors.
+- Use the system-approved Level 4 image as the evolution source.
 <!-- AACHAT_LEVEL_5_END -->
 
 <!-- AACHAT_SHARED_AFTER_LEVELS -->
@@ -71,7 +72,7 @@ generator freedom in subordinate details. Ask it to self-correct LCD,
 single-character count, framing, background, brightness, Level grammar, and
 coherence before output.
 
-For concept mode, state that no character-specific source image is used. For
-reference mode, state that the supplied image controls design language while
-the fixed aachat LCD replaces the complete original face system. The level
-anchor controls rendering/construction only.
+For concept mode, state that no external character-specific source image is
+used. For reference mode, state that the supplied image controls design
+language while the fixed aachat LCD replaces the complete original face
+system. The level anchor controls rendering/construction only.

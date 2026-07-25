@@ -51,31 +51,45 @@ def parse_args() -> argparse.Namespace:
     args = parser.parse_args()
     if args.level == "4" and (args.lineage or args.transformation):
         parser.error("--lineage/--transformation are only valid for Level 5")
-    if bool(args.lineage) != bool(args.transformation):
-        parser.error("use --lineage and --transformation together")
+    if args.level == "5" and not (args.lineage and args.transformation):
+        parser.error("Level 5 requires --lineage and --transformation")
     return args
 
 
 def main() -> None:
     args = parse_args()
-    mode = (
-        "CONCEPT MODE\nNo character-specific design image is used."
-        if args.mode == "concept"
-        else (
+    if args.mode == "concept":
+        mode = "CONCEPT MODE\nNo external character-specific source image is used."
+        if args.level == "5":
+            mode += " Use the system-approved Level 4 image as the evolution source."
+    else:
+        mode = (
             "REFERENCE MODE\nUse the supplied source image as design-language "
             "authority. Replace its complete face system with the fixed aachat "
             "LCD. Do not copy text, logos, protected identity, watermarks, or "
             "image artifacts."
         )
-    )
+        if args.level == "5":
+            mode += (
+                " Also use the system-approved Level 4 image as the evolution "
+                "source."
+            )
     evolution = ""
     if args.lineage:
         evolution = (
             f"\n\nLEVEL 5 LINEAGE\nRetain: {args.lineage}\n"
             f"Transform: {args.transformation}"
         )
+    target = (
+        "Create exactly one Level 4 aachat character."
+        if args.level == "4"
+        else (
+            "Create exactly one of the three distinct Level 5 evolutions of "
+            "the supplied Level 4."
+        )
+    )
     prompt = (
-        f"TARGET\nCreate exactly one Level {args.level} aachat character.\n\n"
+        f"TARGET\n{target}\n\n"
         f"{mode}\n\nDESIGN BRIEF\n{args.brief}{evolution}\n\n"
         f"{spec_for_level(args.level)}\n"
     )

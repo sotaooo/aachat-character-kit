@@ -50,10 +50,11 @@ def main() -> None:
             "skills/aachat-remove-background/SKILL.md"
         )
 
-    target = OUTPUT / source_path.name
+    relative = source_path.relative_to(PRODUCTION.resolve())
+    target = OUTPUT / relative.with_name(f"{source_path.stem}-alpha.png")
     if target.exists():
         sys.exit(f"FAIL: candidate already exists: {target}")
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+    target.parent.mkdir(parents=True, exist_ok=True)
 
     session = new_session(args.model)
     result = remove(source, session=session)

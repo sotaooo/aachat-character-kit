@@ -1,5 +1,4 @@
 interface:
   display_name: "aachat Character Kit"
-  short_description: "Generate and approve aachat Level 4/5 masters"
-  default_prompt: "Use $aachat-character-kit to create and review an aachat Level 4 or Level 5 character."
-
+  short_description: "Create aachat 1+3 evolution sets"
+  default_prompt: "Use $aachat-character-kit to create and review one Level 4 with exactly three Level 5 evolutions."

@@ -88,3 +88,10 @@ Do not copy source eyes, mouth, glasses, text, logos, protected identity,
 background, or image artifacts. Redesign the head structurally around the LCD;
 never paste the screen over the old face.
 ```
+
+## Three Level 5 evolutions
+
+Use the same system-approved Level 4 as the source for all three children.
+Prompt each child separately with one distinct evolution thesis and its
+one-word evolution term. Preserve at least two Level 4 anchors, transform at
+least three axes, and do not use color changes as the main distinction.

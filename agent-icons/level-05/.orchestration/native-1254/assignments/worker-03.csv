@@ -1,5 +1,5 @@
 origin_type,group,reference_filename,reference_relative_path,provisional_filename,provisional_relative_path,evolution,status,sha256,visual_qa
-B01-HUM,humanoid,aachat-level-05-b01-hum-cand-02-13-256.png,B01-HUM__Humanoid/aachat-level-05-b01-hum-cand-02-13-256.png,,,,pending,,
+B01-HUM,humanoid,aachat-level-05-b01-hum-cand-02-13-256.png,B01-HUM__Humanoid/aachat-level-05-b01-hum-cand-02-13-256.png,aachat-ascend-humanoid-unlinked-buccaneer.png,B01-HUM__Humanoid/aachat-ascend-humanoid-unlinked-buccaneer.png,buccaneer,accepted,c28ab4d8b1e63c0eb8c8a9364821e3d5ac239aef09eed0c73ffe40b392a4d839,pass
 B01-HUM,humanoid,aachat-level-05-b01-hum-cand-02-17-256.png,B01-HUM__Humanoid/aachat-level-05-b01-hum-cand-02-17-256.png,,,,pending,,
 B01-HUM,humanoid,aachat-level-05-b01-hum-cand-02-20-256.png,B01-HUM__Humanoid/aachat-level-05-b01-hum-cand-02-20-256.png,,,,pending,,
 B01-HUM,humanoid,aachat-level-05-b01-hum-cand-05-13-256.png,B01-HUM__Humanoid/aachat-level-05-b01-hum-cand-05-13-256.png,,,,pending,,

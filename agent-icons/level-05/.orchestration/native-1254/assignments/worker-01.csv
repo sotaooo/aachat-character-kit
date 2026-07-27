@@ -1,5 +1,5 @@
 origin_type,group,reference_filename,reference_relative_path,provisional_filename,provisional_relative_path,evolution,status,sha256,visual_qa
-B06-OBJ,artifact,aachat-level-05-b06-obj-cand-02-04-256.png,B06-OBJ__Artifact_&_Architecture/aachat-level-05-b06-obj-cand-02-04-256.png,,,,pending,,
+B06-OBJ,artifact,aachat-level-05-b06-obj-cand-02-04-256.png,B06-OBJ__Artifact_&_Architecture/aachat-level-05-b06-obj-cand-02-04-256.png,aachat-ascend-artifact-unlinked-crayon.png,B06-OBJ__Artifact_&_Architecture/aachat-ascend-artifact-unlinked-crayon.png,crayon,accepted,b02655c64179ac1e6dae81c431be01d23427a9883fc513d6d1d0adfb2e2e916a,pass
 B06-OBJ,artifact,aachat-level-05-b06-obj-cand-02-11-256.png,B06-OBJ__Artifact_&_Architecture/aachat-level-05-b06-obj-cand-02-11-256.png,,,,pending,,
 B06-OBJ,artifact,aachat-level-05-b06-obj-cand-02-14-256.png,B06-OBJ__Artifact_&_Architecture/aachat-level-05-b06-obj-cand-02-14-256.png,,,,pending,,
 B06-OBJ,artifact,aachat-level-05-b06-obj-cand-05-03-256.png,B06-OBJ__Artifact_&_Architecture/aachat-level-05-b06-obj-cand-05-03-256.png,,,,pending,,

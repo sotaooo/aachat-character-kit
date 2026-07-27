@@ -1,0 +1,24 @@
+{
+  "contract": "level05-native-1254-rgba-unlinked-v1",
+  "total": 305,
+  "workers": {
+    "worker-01": 73,
+    "worker-02": 58,
+    "worker-03": 64,
+    "worker-04": 56,
+    "worker-05": 54
+  },
+  "categories": {
+    "B01-HUM": 44,
+    "B02-FAU": 47,
+    "B03-FLO": 20,
+    "B04-CUL": 34,
+    "B05-MEC": 32,
+    "B06-OBJ": 73,
+    "B07-MAT": 22,
+    "B08-NAT": 22,
+    "B09-ECH": 2,
+    "B10-ANO": 9
+  },
+  "status": "prepared"
+}

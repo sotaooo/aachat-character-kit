@@ -1,5 +1,5 @@
 origin_type,group,reference_filename,reference_relative_path,provisional_filename,provisional_relative_path,evolution,status,sha256,visual_qa
-B05-MEC,machine,aachat-level-05-b05-mec-cand-02-10-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-02-10-256.png,,,,pending,,
+B05-MEC,machine,aachat-level-05-b05-mec-cand-02-10-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-02-10-256.png,aachat-ascend-machine-unlinked-broadcast.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-broadcast.png,broadcast,accepted,3718bdff2cf6d01efefbf3db75f0b9c93641540c753d884abe0e535800eca8db,pass
 B05-MEC,machine,aachat-level-05-b05-mec-cand-02-19-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-02-19-256.png,,,,pending,,
 B05-MEC,machine,aachat-level-05-b05-mec-cand-05-05-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-05-05-256.png,,,,pending,,
 B05-MEC,machine,aachat-level-05-b05-mec-cand-05-09-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-05-09-256.png,,,,pending,,

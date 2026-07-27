@@ -1,5 +1,5 @@
 origin_type,group,reference_filename,reference_relative_path,provisional_filename,provisional_relative_path,evolution,status,sha256,visual_qa
-B02-FAU,fauna,aachat-level-05-b02-fau-cand-02-01-256.png,B02-FAU__Fauna/aachat-level-05-b02-fau-cand-02-01-256.png,,,,pending,,
+B02-FAU,fauna,aachat-level-05-b02-fau-cand-02-01-256.png,B02-FAU__Fauna/aachat-level-05-b02-fau-cand-02-01-256.png,aachat-ascend-fauna-unlinked-aurora.png,B02-FAU__Fauna/aachat-ascend-fauna-unlinked-aurora.png,aurora,accepted,6e23cebb10a4a9d1720d8d8d1b8ebbab2942c3f77b57f20adbe3a866fc091afc,pass
 B02-FAU,fauna,aachat-level-05-b02-fau-cand-02-03-256.png,B02-FAU__Fauna/aachat-level-05-b02-fau-cand-02-03-256.png,,,,pending,,
 B02-FAU,fauna,aachat-level-05-b02-fau-cand-02-07-256.png,B02-FAU__Fauna/aachat-level-05-b02-fau-cand-02-07-256.png,,,,pending,,
 B02-FAU,fauna,aachat-level-05-b02-fau-cand-02-09-256.png,B02-FAU__Fauna/aachat-level-05-b02-fau-cand-02-09-256.png,,,,pending,,

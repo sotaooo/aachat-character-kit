@@ -50,8 +50,9 @@ def main() -> None:
         raise SystemExit("evolution must not be one of the ten reserved group words")
 
     with args.assignment.open(newline="", encoding="utf-8") as source:
-        rows = list(csv.DictReader(source))
-        fieldnames = source.fieldnames
+        reader = csv.DictReader(source)
+        rows = list(reader)
+        fieldnames = reader.fieldnames
     if fieldnames is None:
         raise SystemExit(f"{args.assignment}: missing header")
 

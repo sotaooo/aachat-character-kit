@@ -17,7 +17,10 @@ additional fixed ratios, schemas, profiles, or calibration sets.
 ## Choose exactly one input mode
 
 - **Concept mode:** no character-specific design image was supplied. Write one
-  concrete visual brief from the human request.
+  concrete visual brief from the human request. When the human requests ideas
+  or has not chosen a direction, select or adapt an entry from
+  `assets/concepts.jsonl`; follow `references/CONCEPTS.md` when expanding the
+  catalog or translating an entry into visual design cues.
 - **Reference mode:** an external source image was supplied. Inspect it and
   write a short brief of its silhouette, palette, materials, construction, and
   prop relationship. Replace its face with the aachat LCD; never paste an LCD

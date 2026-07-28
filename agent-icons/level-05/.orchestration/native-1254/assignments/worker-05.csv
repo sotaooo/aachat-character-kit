@@ -26,11 +26,11 @@ B05-MEC,machine,aachat-level-05-b05-mec-cand-17-05-256.png,B05-MEC__Machine/aach
 B05-MEC,machine,aachat-level-05-b05-mec-cand-17-16-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-17-16-256.png,,,,pending,,
 B05-MEC,machine,aachat-level-05-b05-mec-cand-18-12-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-18-12-256.png,,,,pending,,
 B05-MEC,machine,aachat-level-05-b05-mec-cand-18-16-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-18-16-256.png,,,,pending,,
-B05-MEC,machine,aachat-level-05-b05-mec-cand-19-03-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-03-256.png,,,,pending,,
-B05-MEC,machine,aachat-level-05-b05-mec-cand-19-07-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-07-256.png,,,,pending,,
-B05-MEC,machine,aachat-level-05-b05-mec-cand-19-19-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-19-256.png,,,,pending,,
-B05-MEC,machine,aachat-level-05-b05-mec-cand-20-08-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-20-08-256.png,,,,pending,,
-B05-MEC,machine,aachat-level-05-b05-mec-cand-20-17-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-20-17-256.png,,,,pending,,
+B05-MEC,machine,aachat-level-05-b05-mec-cand-19-03-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-03-256.png,aachat-ascend-machine-unlinked-uplink.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-uplink.png,uplink,accepted,b1cb9840371fba2fe785792362e5ab65860bec207a80cd961036906409929d74,pass
+B05-MEC,machine,aachat-level-05-b05-mec-cand-19-07-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-07-256.png,aachat-ascend-machine-unlinked-gumball.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-gumball.png,gumball,accepted,6002926503fa1caaf562caaf33e07fc15c1b7d1b27570bc2d432f6cf13896e06,pass
+B05-MEC,machine,aachat-level-05-b05-mec-cand-19-19-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-19-19-256.png,aachat-ascend-machine-unlinked-dragonfly.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-dragonfly.png,dragonfly,accepted,59b85f034b3033b1b4e9d5f1f7a9628abff6fb70dc44dcede1b104fb7bc0bd9d,pass
+B05-MEC,machine,aachat-level-05-b05-mec-cand-20-08-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-20-08-256.png,aachat-ascend-machine-unlinked-typewriter.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-typewriter.png,typewriter,accepted,62d49f6af5c72383cc56bd33584ada741669fbd82c58f77079d88f09d993a790,pass
+B05-MEC,machine,aachat-level-05-b05-mec-cand-20-17-256.png,B05-MEC__Machine/aachat-level-05-b05-mec-cand-20-17-256.png,aachat-ascend-machine-unlinked-conductor.png,B05-MEC__Machine/aachat-ascend-machine-unlinked-conductor.png,conductor,accepted,f8f842afc785f7744c2cf20781450ff69205067d6c92778603371112bdfdbec9,pass
 B08-NAT,nature,aachat-level-05-b08-nat-cand-02-12-256.png,B08-NAT__Nature_&_Element/aachat-level-05-b08-nat-cand-02-12-256.png,,,,pending,,
 B08-NAT,nature,aachat-level-05-b08-nat-cand-05-12-256.png,B08-NAT__Nature_&_Element/aachat-level-05-b08-nat-cand-05-12-256.png,,,,pending,,
 B08-NAT,nature,aachat-level-05-b08-nat-cand-05-14-256.png,B08-NAT__Nature_&_Element/aachat-level-05-b08-nat-cand-05-14-256.png,,,,pending,,

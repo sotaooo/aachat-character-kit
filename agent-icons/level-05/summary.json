@@ -12,5 +12,17 @@
     "B08-NAT": 22,
     "B09-ECH": 2,
     "B10-ANO": 9
-  }
+  },
+  "asset_status": "native-master",
+  "resolution": "1254x1254",
+  "color_mode": "RGBA",
+  "lineage_confidence": {
+    "balanced": 55,
+    "exact": 17,
+    "high": 95,
+    "provisional": 138
+  },
+  "parents_used": 144,
+  "max_children_per_parent": 4,
+  "references_removed": 305
 }
